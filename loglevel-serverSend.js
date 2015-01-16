@@ -1,6 +1,6 @@
 /**
  * @description
- * Extend loglevel with new plugin which will send log information to the log-sever. Send is async and all of the messages send one by one
+ * Extend loglevel with new plugin which will send log information to the log-sever
  *
  * @param {object} logger loglevel instance to be extended
  * @param {object} options

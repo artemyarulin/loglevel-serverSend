@@ -1,6 +1,20 @@
-<a name="loglevelLogServer"></a>
-##loglevelLogServer(logger, options)
-Extend loglevel with new plugin which will send log information to the log-sever. Send is async and all of the messages send one by one
+Plugin for JS logger [loglevel](https://github.com/pimterry/loglevel) which will forward all log messages to the server
+
+# Features
+- Send is async and wouldn't slow down the application
+- Messages send one by one, so the order is maintained
+- Any server which accept POST request should be supported
+- You can specify prefix function which would dynamically add prefix for all log messages (app name, current user, etc.)
+
+# Installation
+- Using bower - `bower install loglevel-server-send`
+- Manually - take [loglevel-serverSend.js](loglevel-serverSend.js)
+
+# Configuration
+Add `loglevel` and `loglevel-serverSend` scripts to your page first. Then configure the plugin:
+
+##loglevelServerSend(logger, options)
+Extend loglevel with new plugin which will send log information to the log-sever
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
@@ -12,7 +26,10 @@ Extend loglevel with new plugin which will send log information to the log-sever
 
 **Example**  
 ```js
-loglevelLogServer(log,{url:'https://example.com/app/log',prefix: function(logSev,message) {
+loglevelServerSend(log,{url:'https://example.com/app/log',prefix: function(logSev,message) {
     return '[' + new Date().toISOString() + '] ' + logSev + ': ' + message + '\n'   
 }})
 ```
+
+# Servers
+It should be fairly easy to create a server which will store all the log messages, but most probably [node-log-server](https://github.com/divhide/node-log-server) would be good enough for you
