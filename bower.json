@@ -1,0 +1,21 @@
+{
+  "name": "loglevel-serverSend",
+  "main": "loglevel-serverSend.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/artemyarulin/loglevel-serverSend",
+  "authors": [
+    "Artem Yarulin <Artem.Yarulin@fessguid.com>"
+  ],
+  "description": "Plugin for loglevel JS lib which will forward all log messages to the server",
+  "keywords": [
+    "loglevel"
+  ],
+  "ignore": [
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "loglevel": "~1.2.0"
+  }
+}
